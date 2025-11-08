@@ -1,0 +1,9 @@
+{
+  "commentTranslate.targetLanguage": "es",
+  "commentTranslate.source": "Google",
+  "commentTranslate.hover.enabled": true,
+  "commentTranslate.hover.string": true,
+  "commentTranslate.hover.content": true,
+  "commentTranslate.multilineMerge": true,
+  "commentTranslate.maxTranslationLength": 5000
+}

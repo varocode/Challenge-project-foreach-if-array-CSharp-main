@@ -1,16 +1,15 @@
 /*
-This C# console application is designed to:
-- Use arrays to store student names and assignment scores.
-- Use a `foreach` statement to iterate through the student names as an outer program loop.
-- Use an `if` statement within the outer loop to identify the current student name and access that student's assignment scores.
-- Use a `foreach` statement within the outer loop to iterate though the assignment scores array and sum the values.
-- Use an algorithm within the outer loop to calculate the average exam score for each student.
-- Use an `if-elseif-else` construct within the outer loop to evaluate the average exam score and assign a letter grade automatically.
-- Integrate extra credit scores when calculating the student's final score and letter grade as follows:
-    - detects extra credit assignments based on the number of elements in the student's scores array.
-    - divides the values of extra credit assignments by 10 before adding extra credit scores to the sum of exam scores.
-- use the following report format to report student grades:
-
+Esta aplicación de consola C# está diseñada para:
+-Utilice matrices para almacenar los nombres de los estudiantes y las puntuaciones de las tareas.
+-Utilice una declaración `foreach` para recorrer los nombres de los estudiantes como un bucle de programa externo.
+-Utilice una declaración "if" dentro del bucle externo para identificar el nombre del estudiante actual y acceder a las puntuaciones de las tareas de ese estudiante.
+-Utilice una declaración `foreach` dentro del bucle externo para iterar a través de la matriz de puntuaciones de asignación y sumar los valores.
+-Utilice un algoritmo dentro del bucle exterior para calcular la puntuación media del examen de cada estudiante.
+-Utilice una construcción `if-elseif-else` dentro del bucle externo para evaluar la puntuación promedio del examen y asignar una calificación con letras automáticamente.
+-Integrar puntajes de créditos adicionales al calcular el puntaje final y la calificación con letras del estudiante de la siguiente manera:
+    -detecta asignaciones de créditos adicionales en función de la cantidad de elementos en la matriz de puntajes del estudiante.
+-divide los valores de las asignaciones de créditos adicionales por 10 antes de agregar puntajes de créditos adicionales a la suma de los puntajes de los exámenes.
+-utilice el siguiente formato de informe para informar las calificaciones de los estudiantes:
     Student         Grade
 
     Sophia:         92.2    A-
@@ -31,17 +30,17 @@ int[] studentScores = new int[10];
 
 string currentStudentLetterGrade = "";
 
-// display the header row for scores/grades
+//muestra la fila del encabezado para puntuaciones/calificaciones
 Console.Clear();
 Console.WriteLine("Student\t\tGrade\tLetter Grade\n");
 
 /*
-The outer foreach loop is used to:
-- iterate through student names
-- assign a student's grades to the studentScores array
-- sum assignment scores (inner foreach loop)
-- calculate numeric and letter grade
-- write the score report information
+El bucle foreach exterior se utiliza para:
+-iterar a través de los nombres de los estudiantes
+-asignar las calificaciones de un estudiante a la matriz StudentScores
+-suma de puntuaciones de tareas (bucle foreach interno)
+-calcular la calificación numérica y en letras
+-escribir la información del informe de puntuación
 */
 foreach (string name in studentNames)
 {
@@ -63,9 +62,9 @@ foreach (string name in studentNames)
     int gradedAssignments = 0;
 
     /*
-    the inner foreach loop sums assignment scores
-    extra credit assignments are worth 10% of an exam score
-    */
+        el bucle foreach interno suma las puntuaciones de las tareas
+        Las tareas de crédito adicionales valen el 10% de la puntuación del examen.
+        */
     foreach (int score in studentScores)
     {
         gradedAssignments += 1;
@@ -111,6 +110,6 @@ foreach (string name in studentNames)
     Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
 }
 
-// required for running in VS Code (keeps the Output windows open to view results)
+//requerido para ejecutar en VS Code (mantiene las ventanas de Salida abiertas para ver los resultados)
 Console.WriteLine("\n\rPress the Enter key to continue");
 Console.ReadLine();
